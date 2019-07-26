@@ -10,7 +10,7 @@ namespace ConsoleApp2
     {
         static void Main(string[] args)
         {
-            var keisan = new Keisan1();
+            var keisan = new Class1();
 
             //Random aite = new System.Random();
             keisan.Aite = 1; //aite.Next(1, 4);
@@ -28,7 +28,11 @@ namespace ConsoleApp2
             keisan.Method();
 
             //勝敗結果確認（継承先から呼び出し）
-            var shouhai = new Shouhai1();
+            var shouhai = new Keishou1();
+            //継承先にデータを流す
+            shouhai.Aite = keisan.Aite;
+            shouhai.Jibun = keisan.Jibun;
+
             shouhai.Shouhai2();
 
             shouhai.Kakunin();

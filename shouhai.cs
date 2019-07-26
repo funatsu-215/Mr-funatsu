@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp2
 {
-    class Shouhai1 : Keisan1
+    class Keishou1 : Class1
     {
         public void Shouhai2()
         {
