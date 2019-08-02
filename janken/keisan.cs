@@ -13,8 +13,6 @@ namespace ConsoleApp2
         public int kaisu;
         protected int cpuninzu;
         protected int playerninzu;
-        public int kekka = 0;
-        public int goukei = 0;
         public Class1(int playerninzu,int cpuninzu, int kaisu)
         {
             cpu = new int[cpuninzu];
@@ -83,8 +81,5 @@ namespace ConsoleApp2
                 }
             }
         }
-        //kekka()のあった位置
-        
-
     }
 }

@@ -8,6 +8,7 @@ namespace ConsoleApp2
 {
     class Keishou1 : Class1
     {
+        public int kekka = 0;
         public int zokkou = 0;
         public int[] pcount;
         public int[] ccount;
@@ -143,6 +144,7 @@ namespace ConsoleApp2
                 pshouritsu[i] = (100 * pcount[i]) / kaisu;
                 Console.WriteLine("PLAYER{0}　勝率{1}%", i, pshouritsu[i]);
             }
+            
         }
         public void Cshouritsu()
         {
