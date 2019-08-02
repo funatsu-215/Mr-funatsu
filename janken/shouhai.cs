@@ -28,6 +28,8 @@ namespace ConsoleApp2
         }
         public void Kekka()
         {
+            Console.WriteLine("勝者は.........");
+            Console.WriteLine("\n");
             for (int i = 0; i < player.Length; i++)
             {
                 kekka = kekka | (1 << player[i]);
@@ -49,7 +51,7 @@ namespace ConsoleApp2
                 {
                     if (player[i] == 1)
                     {
-                        Console.WriteLine("PLAYER[{0}]の勝ち", i);
+                        Console.WriteLine("PLAYER({0})", i);
                         pcount[i] += 1;
                     }
                     else if (player[i] == 0 || player[i] == 2)
@@ -61,7 +63,7 @@ namespace ConsoleApp2
                 {
                     if (cpu[i] == 1)
                     {
-                        Console.WriteLine("CPU[{0}]の勝ち", i);
+                        Console.WriteLine("CPU({0})", i);
                         ccount[i] += 1;
                     }
                     else if (cpu[i] == 0 || cpu[i] == 2)
@@ -78,7 +80,7 @@ namespace ConsoleApp2
                 {
                     if (player[i] == 2)
                     {
-                        Console.WriteLine("PLAYER[{0}]の勝ち", i);
+                        Console.WriteLine("PLAYER({0})", i);
                         pcount[i] += 1;
                     }
                     else if (player[i] == 0 || player[i] == 2)
@@ -90,7 +92,7 @@ namespace ConsoleApp2
                 {
                     if (cpu[i] == 2)
                     {
-                        Console.WriteLine("CPU[{0}]の勝ち", i);
+                        Console.WriteLine("CPU({0})", i);
                         ccount[i] += 1;
                     }
                     else if (cpu[i] == 0 || cpu[i] == 2)
@@ -107,7 +109,7 @@ namespace ConsoleApp2
                 {
                     if (player[i] == 0)
                     {
-                        Console.WriteLine("PLAYER[{0}]の勝ち", i);
+                        Console.WriteLine("PLAYER({0})", i);
                         pcount[i] += 1;
                     }
                     else if (player[i] == 0 || player[i] == 2)
@@ -119,7 +121,7 @@ namespace ConsoleApp2
                 {
                     if (cpu[i] == 0)
                     {
-                        Console.WriteLine("CPU[{0}]の勝ち", i);
+                        Console.WriteLine("CPU({0})", i);
                         ccount[i] += 1;
                     }
                     else if (cpu[i] == 0 || cpu[i] == 2)
@@ -135,24 +137,26 @@ namespace ConsoleApp2
                 Console.WriteLine("kekka{0}", kekka);
                 zokkou = 2;
             }
-
+            Console.WriteLine("\n");
         }
         public void Pshouritsu()
         {
+            Console.WriteLine("勝率");
+            Console.WriteLine("※※※※※※※※※※※※※※※※※※※※※※※※※※※※");
             for (int i = 0; i < player.Length; i++)
             {
                 pshouritsu[i] = (100 * pcount[i]) / kaisu;
-                Console.WriteLine("PLAYER{0}　勝率{1}%", i, pshouritsu[i]);
+                Console.WriteLine("※※PLAYER({0})　{1}勝　勝率{2}%　　　　　　　　　　　　※※", i,pcount[i], pshouritsu[i]);
             }
-            
         }
         public void Cshouritsu()
         {
             for (int i = 0; i < cpu.Length; i++)
             {
                 cshouritsu[i] = (100 * ccount[i]) / kaisu;
-                Console.WriteLine("CPU{0}　勝率{1}%", i, cshouritsu[i]);
+                Console.WriteLine("※※CPU({0})　{1}勝　勝率{2}%　　　　　　　　　　　　　　※※", i,ccount[i], cshouritsu[i]);
             }
+            Console.WriteLine("※※※※※※※※※※※※※※※※※※※※※※※※※※※※");
         }
     }
 }

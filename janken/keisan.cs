@@ -21,21 +21,21 @@ namespace ConsoleApp2
             this.playerninzu = playerninzu;
             this.kaisu = kaisu;
         }
-        public int CpuNinzu
-        {
-            set { cpuninzu = value; }
-            get { return cpuninzu; }
-        }
-        public int PlayerNinzu
-        {
-            set { playerninzu = value; }
-            get { return playerninzu; }
-        }
-        public int Kaisu
-        {
-            set { kaisu = value; }
-            get { return kaisu; }
-        }
+        //public int CpuNinzu
+        //{
+            //set { cpuninzu = value; }
+            //get { return cpuninzu; }
+        //}
+        //public int PlayerNinzu
+        //{
+            //set { playerninzu = value; }
+            //get { return playerninzu; }
+        //}
+        //public int Kaisu
+        //{
+            //set { kaisu = value; }
+            //get { return kaisu; }
+        //}
 
         public void Cpute()
         {
@@ -43,15 +43,15 @@ namespace ConsoleApp2
             {
                 if (cpu[i] == 0)
                 {
-                    Console.WriteLine("CPU({0})の手　==>　グー",i);
+                    Console.WriteLine("CPU({0})の手　　 ==>　グー",i);
                 }
                 else if (cpu[i] == 1)
                 {
-                    Console.WriteLine("CPU({0})の手　==>　チョキ",i);
+                    Console.WriteLine("CPU({0})の手　　 ==>　チョキ",i);
                 }
                 else if (cpu[i] == 2)
                 {
-                    Console.WriteLine("CPU({0})の手　==>　パー",i);
+                    Console.WriteLine("CPU({0})の手　　 ==>　パー",i);
                 }
                 else
                 {
@@ -80,6 +80,7 @@ namespace ConsoleApp2
                     Console.WriteLine("エラーです、管理人に報告してください");
                 }
             }
+            Console.WriteLine("\n");
         }
     }
 }

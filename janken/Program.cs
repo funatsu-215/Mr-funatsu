@@ -20,24 +20,24 @@ namespace ConsoleApp2
                     try
                     {
                         //cpu人数入力
-                        Console.WriteLine("cpu人数");
+                        Console.WriteLine("cpu人数:数字で入力してね");
                         cpuninzu = int.Parse(Console.ReadLine());
                     }
                     catch (System.FormatException) //文字入力、改行をキャッチ
                     {
-                        Console.WriteLine("※※半角英数字で入力してください※※");
+                        Console.WriteLine("※※半角英数字で入力してください※※\n");
                         continue;
                     }
                     catch (System.OverflowException) //int型を超える整数をキャッチ
                     {
-                        Console.WriteLine("※※0～2147483647で入力してください※※");
+                        Console.WriteLine("※※0～2147483647で入力してください※※\n");
                         continue;
                     }
                     if (cpuninzu >= -2147483647 && cpuninzu <= -1) //マイナス値をキャッチ
                     {
                         Console.WriteLine("※※人数がマイナス...?※※");
                         Console.WriteLine("※※お前誰か殺すのか？※※");
-                        Console.WriteLine("※※もう一度入力してね※※");
+                        Console.WriteLine("※※もう一度入力してね※※\n");
                         continue;
                     }
                     break;
@@ -47,17 +47,17 @@ namespace ConsoleApp2
                     try
                     {
                         //player人数入力
-                        Console.WriteLine("player人数");
+                        Console.WriteLine("player人数:数字で入力してね");
                         playerninzu = int.Parse(Console.ReadLine());
                     }
                     catch (System.FormatException) //文字入力、改行をキャッチ
                     {
-                        Console.WriteLine("※※半角英数字で入力してください※※");
+                        Console.WriteLine("※※半角英数字で入力してください※※\n");
                         continue;
                     }
                     catch (System.OverflowException) //int型を超える整数をキャッチ
                     {
-                        Console.WriteLine("※※0～2147483647で入力してください※※");
+                        Console.WriteLine("※※0～2147483647で入力してください※※\n");
                         continue;
                     }
                     break;
@@ -65,14 +65,14 @@ namespace ConsoleApp2
                 if ((cpuninzu == 1 && playerninzu == 0) || (cpuninzu == 0 && playerninzu == 1) || (cpuninzu == 0 && playerninzu == 0))
                 {
                     Console.WriteLine("※※相手がいなきゃじゃんけんできんよ※※");
-                    Console.WriteLine("※※もう一度入力してね※※");
+                    Console.WriteLine("※※もう一度入力してね※※\n");
                     continue;
                 }
                 else if(playerninzu >= -2147483647 && playerninzu <= -1) //マイナス値をキャッチ
                 {
                     Console.WriteLine("※※人数がマイナス...?※※");
                     Console.WriteLine("※※お前誰か殺すのか？※※");
-                    Console.WriteLine("※※もう一度入力してね※※");
+                    Console.WriteLine("※※もう一度入力してね※※\n");
                     continue;
                 }
                 else break;
@@ -113,6 +113,7 @@ namespace ConsoleApp2
             for (int k = 1; k <= kaisu; k++)
             {
                 Console.WriteLine("{0}回目", k);
+
                 //あいこの時継続させる:それ以外は抜け出す
                 while (shouhai.Zokkou == 0)
                 {
@@ -130,9 +131,40 @@ namespace ConsoleApp2
                     //playerの手決定:入力
                     for (int i = 0; i < playerninzu; i++)
                     {
-                        Console.WriteLine("Player{0}は何を出す？数字で選んでね", i);
-                        Console.WriteLine("0:グー　1:チョキ　2:パー");
-                        keisan.player[i] = int.Parse(Console.ReadLine());
+                        while (true)
+                        {
+                            try
+                            {
+                                Console.WriteLine("※※※※※※※※※※※※※※※※※※※※※※※※※");
+                                Console.WriteLine("※※　Player({0})は何を出す？数字で選んでね 　　※※", i);
+                                Console.WriteLine("※※　　　　0:グー　1:チョキ　2:パー　　　　　※※");
+                                Console.WriteLine("※※※※※※※※※※※※※※※※※※※※※※※※※");
+                                keisan.player[i] = int.Parse(Console.ReadLine());
+                            }
+                            catch (System.FormatException) //文字をキャッチ
+                            {
+                                Console.WriteLine("※※半角英数字で入力してください※※\n");
+                                continue;
+                            }
+                            catch (System.OverflowException) //int型を超える整数をキャッチ
+                            {
+                                Console.WriteLine("※※0～2147483647で入力してください※※\n");
+                                continue;
+                            }
+                            if (keisan.player[i] >= -2147483647 && keisan.player[i] <= -1)
+                            {
+                                Console.WriteLine("目見えてますか？？\n");
+                                continue;
+                            }
+                            else if (keisan.player[i] >= 3)
+                            {
+                                Console.WriteLine("目見えてますか？？\n");
+                                continue;
+                            }
+                            break;
+                            //shouhai.player[i] = keisan.player[i];
+                        }
+                        
                         shouhai.player[i] = keisan.player[i];
                     }
                     //Cpuの手を表示
