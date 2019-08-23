@@ -43,10 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="keisan.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Base.cs" />
+    <Compile Include="HandDecision.cs" />
+    <Compile Include="Main.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="shouhai.cs" />
+    <Compile Include="WinDecision.cs" />
+    <Compile Include="WinRate.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
