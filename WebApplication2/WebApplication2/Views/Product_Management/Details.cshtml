@@ -1,0 +1,58 @@
+﻿@model WebApplication2.Models.Product_Management
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>詳細</h2>
+
+<div>
+    <h4>Details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.商品名)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.商品名)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.単価)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.単価)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.販売価格)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.販売価格)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.産地)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.産地)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("編集", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("商品管理へ戻る", "Index")
+</p>

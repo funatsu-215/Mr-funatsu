@@ -1,0 +1,58 @@
+﻿@model WebApplication2.Models.Goods_Receipt_Management
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Goods_Receipt_Management</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.商品名)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.商品名)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.仕入価格)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.仕入価格)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.個数)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.個数)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.合計金額)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.合計金額)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.登録日時)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.登録日時)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
